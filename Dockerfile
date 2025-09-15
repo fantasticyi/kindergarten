@@ -1,5 +1,5 @@
 # 使用官方的 Python 3.9 slim 镜像
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 # 在容器内创建一个工作目录
 WORKDIR /app
@@ -20,4 +20,5 @@ EXPOSE 80
 
 # 5. 启动 Gunicorn 服务器
 # Gunicorn 会在 /app 目录里寻找 manage:app
+
 CMD ["gunicorn", "manage:app", "--bind", "0.0.0.0:80", "--workers", "4"]
